@@ -8,39 +8,43 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Segoe UI', system-ui, sans-serif;
-    background: #0d1117;
-    color: #e6edf3;
+    background: #0a0a0a;
+    color: #f2f2f2;
     line-height: 1.6;
   }
   header {
     text-align: center;
     padding: 100px 20px 60px;
-    background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+    background: linear-gradient(180deg, #141414 0%, #0a0a0a 100%);
+    border-bottom: 1px solid #1f1f1f;
   }
   header h1 {
-    font-size: 3.5rem;
-    background: linear-gradient(90deg, #58a6ff, #a371f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 3.8rem;
+    color: #ffffff;
+    letter-spacing: 2px;
     margin-bottom: 10px;
   }
+  header h1 span { color: #e0102b; }
   header p {
     font-size: 1.3rem;
-    color: #8b949e;
+    color: #a0a0a0;
     margin-bottom: 30px;
   }
   .btn {
     display: inline-block;
     padding: 14px 32px;
     margin: 8px;
-    border-radius: 8px;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
-    transition: transform 0.2s;
+    transition: all 0.2s;
+    border: 2px solid transparent;
   }
   .btn:hover { transform: translateY(-2px); }
-  .btn-primary { background: #238636; color: white; }
-  .btn-secondary { background: #21262d; color: #e6edf3; border: 1px solid #30363d; }
+  .btn-primary { background: #e0102b; color: white; }
+  .btn-primary:hover { background: #ff1a3d; }
+  .btn-secondary { background: transparent; color: #f2f2f2; border: 2px solid #333; }
+  .btn-secondary:hover { border-color: #e0102b; }
   section {
     max-width: 1000px;
     margin: 0 auto;
@@ -50,6 +54,16 @@
     text-align: center;
     font-size: 2rem;
     margin-bottom: 40px;
+    color: #ffffff;
+    position: relative;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e0102b;
+    margin: 12px auto 0;
   }
   .profiles {
     display: grid;
@@ -57,39 +71,49 @@
     gap: 24px;
   }
   .card {
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 12px;
+    background: #141414;
+    border: 1px solid #262626;
+    border-radius: 8px;
     padding: 28px;
+    transition: border-color 0.2s;
   }
-  .card h3 { color: #58a6ff; margin-bottom: 12px; font-size: 1.3rem; }
-  .card p { color: #8b949e; }
+  .card:hover { border-color: #e0102b; }
+  .card h3 { color: #e0102b; margin-bottom: 12px; font-size: 1.3rem; }
+  .card p { color: #a0a0a0; }
   .status-badge {
     display: inline-block;
-    background: #3d2c00;
-    color: #e3b341;
+    background: #1a1a1a;
+    color: #e0102b;
+    border: 1px solid #e0102b;
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.9rem;
     margin-top: 20px;
   }
+  .about-text {
+    text-align: center;
+    color: #a0a0a0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
   footer {
     text-align: center;
     padding: 40px 20px;
-    color: #6e7681;
-    border-top: 1px solid #21262d;
+    color: #666;
+    border-top: 1px solid #1f1f1f;
   }
-  footer a { color: #58a6ff; text-decoration: none; }
+  footer a { color: #e0102b; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Medula Linux</h1>
+  <h1>MEDULA<span>.</span>LINUX</h1>
   <p>The core that adapts to every use.</p>
   <a href="https://github.com/medula-linux/medula-linux" class="btn btn-primary">View on GitHub</a>
   <a href="https://github.com/medula-linux/medula-linux/releases" class="btn btn-secondary">Download ISO</a>
-  <div><span class="status-badge">🚧 In Development</span></div>
+  <div><span class="status-badge">IN DEVELOPMENT</span></div>
 </header>
 
 <section>
@@ -116,7 +140,7 @@
 
 <section>
   <h2>About</h2>
-  <p style="text-align:center; color:#8b949e; max-width:700px; margin:0 auto;">
+  <p class="about-text">
     Medula Linux is a profile-driven distribution based on Ubuntu. During installation,
     pick the profiles that match how you use your computer — no need for separate distros
     for different purposes. Profiles are not exclusive, so combine as many as you need.
@@ -124,7 +148,7 @@
 </section>
 
 <footer>
-  <p>Built with ❤️ by the Medula Linux community</p>
+  <p>Built by the Medula Linux community</p>
   <p><a href="https://github.com/medula-linux/medula-linux">GitHub</a> · IRC: #medula on Libera.Chat</p>
 </footer>
 

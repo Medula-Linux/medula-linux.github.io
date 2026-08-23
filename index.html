@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medula Linux — The core that adapts to every use</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    line-height: 1.6;
+  }
+  header {
+    text-align: center;
+    padding: 100px 20px 60px;
+    background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+  }
+  header h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(90deg, #58a6ff, #a371f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+  header p {
+    font-size: 1.3rem;
+    color: #8b949e;
+    margin-bottom: 30px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    margin: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: #238636; color: white; }
+  .btn-secondary { background: #21262d; color: #e6edf3; border: 1px solid #30363d; }
+  section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  .profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 28px;
+  }
+  .card h3 { color: #58a6ff; margin-bottom: 12px; font-size: 1.3rem; }
+  .card p { color: #8b949e; }
+  .status-badge {
+    display: inline-block;
+    background: #3d2c00;
+    color: #e3b341;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6e7681;
+    border-top: 1px solid #21262d;
+  }
+  footer a { color: #58a6ff; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Medula Linux</h1>
+  <p>The core that adapts to every use.</p>
+  <a href="https://github.com/medula-linux/medula-linux" class="btn btn-primary">View on GitHub</a>
+  <a href="https://github.com/medula-linux/medula-linux/releases" class="btn btn-secondary">Download ISO</a>
+  <div><span class="status-badge">🚧 In Development</span></div>
+</header>
+
+<section>
+  <h2>Choose your profile</h2>
+  <div class="profiles">
+    <div class="card">
+      <h3>Desktop</h3>
+      <p>KDE Plasma, office suite, media tools, and gaming support — ready for daily use.</p>
+    </div>
+    <div class="card">
+      <h3>Pentest</h3>
+      <p>Security and penetration testing tools for professionals and learners.</p>
+    </div>
+    <div class="card">
+      <h3>Server</h3>
+      <p>Headless essentials — SSH, web server, containers, and firewall out of the box.</p>
+    </div>
+    <div class="card">
+      <h3>Dev</h3>
+      <p>Languages, editors, and tools ready for building software from day one.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>About</h2>
+  <p style="text-align:center; color:#8b949e; max-width:700px; margin:0 auto;">
+    Medula Linux is a profile-driven distribution based on Ubuntu. During installation,
+    pick the profiles that match how you use your computer — no need for separate distros
+    for different purposes. Profiles are not exclusive, so combine as many as you need.
+  </p>
+</section>
+
+<footer>
+  <p>Built with ❤️ by the Medula Linux community</p>
+  <p><a href="https://github.com/medula-linux/medula-linux">GitHub</a> · IRC: #medula on Libera.Chat</p>
+</footer>
+
+</body>
+</html>

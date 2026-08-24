@@ -12,13 +12,59 @@
     color: #1a1a1a;
     line-height: 1.6;
   }
+  a { color: inherit; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    border-bottom: 1px solid #e5e5e5;
+    flex-wrap: wrap;
+  }
+  nav .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #0a0a0a;
+  }
+  nav .brand img { width: 32px; height: 32px; }
+  nav .brand span { color: #e0102b; }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  nav ul a {
+    text-decoration: none;
+    color: #444;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  nav ul a:hover { color: #e0102b; }
+  nav .donate {
+    background: #e0102b;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  nav .donate:hover { background: #ff1a3d; }
+
   header {
     text-align: center;
     padding: 80px 20px 60px;
     background: linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%);
     border-bottom: 1px solid #e5e5e5;
   }
-  header img { width: 130px; height: auto; margin-bottom: 20px; }
+  header img.mascot { width: 130px; height: auto; margin-bottom: 20px; }
   header h1 {
     font-size: 3.8rem;
     color: #0a0a0a;
@@ -46,11 +92,16 @@
   .btn-primary:hover { background: #ff1a3d; }
   .btn-secondary { background: transparent; color: #1a1a1a; border: 2px solid #ccc; }
   .btn-secondary:hover { border-color: #e0102b; color: #e0102b; }
-  section {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 60px 20px;
+  .btn-row-small { margin-top: 10px; }
+  .btn-row-small a {
+    font-size: 0.85rem;
+    color: #888;
+    text-decoration: none;
+    margin: 0 10px;
   }
+  .btn-row-small a:hover { color: #e0102b; }
+
+  section { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
   h2 {
     text-align: center;
     font-size: 2rem;
@@ -81,6 +132,7 @@
   .card:hover { border-color: #e0102b; }
   .card h3 { color: #e0102b; margin-bottom: 12px; font-size: 1.3rem; }
   .card p { color: #cccccc; }
+
   .status-badge {
     display: inline-block;
     background: #fff0f1;
@@ -91,34 +143,73 @@
     font-size: 0.9rem;
     margin-top: 20px;
   }
-  .about-text {
-    text-align: center;
-    color: #555555;
-    max-width: 700px;
+  .about-text { text-align: center; color: #555555; max-width: 700px; margin: 0 auto; }
+
+  .news-section { background: #fafafa; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; }
+  .news-list { list-style: none; max-width: 700px; margin: 0 auto; }
+  .news-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 0.95rem;
+  }
+  .news-list li:last-child { border-bottom: none; }
+  .news-list .date { color: #999; white-space: nowrap; margin-right: 20px; }
+
+  footer { background: #0a0a0a; color: #ccc; padding: 60px 20px 30px; }
+  .footer-grid {
+    max-width: 1000px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
   }
-  footer {
+  .footer-grid h4 { color: #fff; margin-bottom: 14px; font-size: 0.95rem; letter-spacing: 1px; }
+  .footer-grid ul { list-style: none; }
+  .footer-grid li { margin-bottom: 8px; }
+  .footer-grid a { color: #999; text-decoration: none; font-size: 0.9rem; }
+  .footer-grid a:hover { color: #e0102b; }
+  .footer-bottom {
     text-align: center;
-    padding: 40px 20px;
-    color: #888888;
-    border-top: 1px solid #e5e5e5;
+    padding-top: 24px;
+    border-top: 1px solid #1f1f1f;
+    color: #666;
+    font-size: 0.85rem;
   }
-  footer a { color: #e0102b; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+  .footer-bottom span { color: #e0102b; }
 </style>
 </head>
 <body>
 
+<nav>
+  <a href="#" class="brand">
+    <img src="logo.svg" alt="Medula logo">
+    MEDULA<span>.</span>LINUX
+  </a>
+  <ul>
+    <li><a href="#profiles">Profiles</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="https://github.com/medula-linux/medula-linux">GitHub</a></li>
+  </ul>
+  <a href="#" class="donate">Donate</a>
+</nav>
+
 <header>
-  <img src="logo.svg" alt="Medula Linux mascot">
+  <img class="mascot" src="logo.svg" alt="Medula Linux mascot">
   <h1>MEDULA<span>.</span>LINUX</h1>
   <p>The core that adapts to every use.</p>
-  <a href="https://github.com/medula-linux/medula-linux" class="btn btn-primary">View on GitHub</a>
-  <a href="https://github.com/medula-linux/medula-linux/releases" class="btn btn-secondary">Download ISO</a>
+  <a href="https://github.com/medula-linux/medula-linux/releases" class="btn btn-primary">Download ISO</a>
+  <a href="https://github.com/medula-linux/medula-linux" class="btn btn-secondary">View on GitHub</a>
   <div><span class="status-badge">IN DEVELOPMENT</span></div>
+  <div class="btn-row-small">
+    <a href="#">IRC: #medula on Libera.Chat</a> · <a href="https://github.com/medula-linux/medula-linux">Source</a>
+  </div>
 </header>
 
-<section>
+<section id="profiles">
   <h2>Choose your profile</h2>
   <div class="profiles">
     <div class="card">
@@ -140,7 +231,7 @@
   </div>
 </section>
 
-<section>
+<section id="about">
   <h2>About</h2>
   <p class="about-text">
     Medula Linux is a profile-driven distribution based on Ubuntu. During installation,
@@ -149,9 +240,51 @@
   </p>
 </section>
 
+<section id="news" class="news-section">
+  <h2>Latest updates</h2>
+  <ul class="news-list">
+    <li><span>Project kickoff — Medula Linux announced</span> <span class="date">2026-08</span></li>
+    <li><span>Desktop profile build in progress</span> <span class="date">2026-08</span></li>
+    <li><span>Website and IRC channel launched</span> <span class="date">2026-08</span></li>
+  </ul>
+</section>
+
 <footer>
-  <p>Built by the Medula Linux community</p>
-  <p><a href="https://github.com/medula-linux/medula-linux">GitHub</a> · IRC: #medula on Libera.Chat</p>
+  <div class="footer-grid">
+    <div>
+      <h4>ABOUT</h4>
+      <ul>
+        <li><a href="#about">About Medula</a></li>
+        <li><a href="#profiles">Profiles</a></li>
+        <li><a href="https://github.com/medula-linux/medula-linux/releases">Get Medula</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>DEVELOPERS</h4>
+      <ul>
+        <li><a href="https://github.com/medula-linux/medula-linux">GitHub Repo</a></li>
+        <li><a href="https://github.com/medula-linux/medula-linux/issues">Issues</a></li>
+        <li><a href="https://github.com/medula-linux">Organization</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>COMMUNITY</h4>
+      <ul>
+        <li><a href="#">IRC: #medula</a></li>
+        <li><a href="https://github.com/medula-linux/medula-linux/discussions">Discussions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>SUPPORT</h4>
+      <ul>
+        <li><a href="#">Donate</a></li>
+        <li><a href="https://github.com/medula-linux/medula-linux/issues">Report a bug</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Built with <span>♥</span> by the Medula Linux community · © 2026
+  </div>
 </footer>
 
 </body>

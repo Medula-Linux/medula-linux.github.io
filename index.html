@@ -115,7 +115,7 @@
   .btn-ghost{border:1px solid var(--line);color:var(--ink);}
   .btn-ghost:hover{border-color:var(--signal);color:var(--signal);transform:translateY(-2px);}
 
-  .builder{display:grid;grid-template-columns:1fr 1.15fr;border:1px solid var(--panel-line);background:var(--panel);color:var(--panel-text);opacity:0;animation:rise 1s var(--ease) .66s forwards;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);}
+  .builder{position:relative;display:grid;grid-template-columns:1fr 1.15fr;border:1px solid var(--panel-line);background:var(--panel);color:var(--panel-text);opacity:0;animation:rise 1s var(--ease) .66s forwards;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);}
   @media (max-width:860px){.builder{grid-template-columns:1fr;}}
 
   .builder-left{padding:30px;border-right:1px solid var(--panel-line);}
@@ -151,7 +151,7 @@
   .sec-title{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.01em;color:var(--ink);}
   .sec-note{font-family:var(--mono);font-size:.82rem;color:var(--muted);max-width:280px;}
 
-  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--panel-line);border:1px solid var(--panel-line);box-shadow:0 30px 60px -30px rgba(0,0,0,.25);}
+  .cards{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--panel-line);border:1px solid var(--panel-line);box-shadow:0 30px 60px -30px rgba(0,0,0,.25);}
   @media (max-width:900px){.cards{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:520px){.cards{grid-template-columns:1fr;}}
   .card{background:var(--panel);color:var(--panel-text);padding:32px 26px;position:relative;overflow:hidden;transition:background .25s;}
@@ -164,11 +164,17 @@
   .chip-row{display:flex;flex-wrap:wrap;gap:6px;}
   .chip{font-family:var(--mono);font-size:.68rem;color:var(--panel-muted);border:1px solid var(--panel-line);padding:3px 8px;border-radius:2px;}
 
+  .corner{position:absolute;width:16px;height:16px;pointer-events:none;z-index:2;}
+  .corner.tl{top:-1px;left:-1px;border-top:2px solid var(--signal);border-left:2px solid var(--signal);}
+  .corner.tr{top:-1px;right:-1px;border-top:2px solid var(--signal);border-right:2px solid var(--signal);}
+  .corner.bl{bottom:-1px;left:-1px;border-bottom:2px solid var(--signal);border-left:2px solid var(--signal);}
+  .corner.br{bottom:-1px;right:-1px;border-bottom:2px solid var(--signal);border-right:2px solid var(--signal);}
+
   .philosophy{max-width:760px;}
   .philosophy p{font-family:var(--disp);font-weight:500;font-style:italic;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.5;color:var(--ink);}
   .philosophy .annot{font-family:var(--mono);font-size:.78rem;color:var(--signal);margin-top:26px;letter-spacing:.03em;}
 
-  .log{font-family:var(--mono);font-size:.86rem;border:1px solid var(--panel-line);background:var(--panel);color:var(--panel-text);box-shadow:0 30px 60px -30px rgba(0,0,0,.25);}
+  .log{position:relative;font-family:var(--mono);font-size:.86rem;border:1px solid var(--panel-line);background:var(--panel);color:var(--panel-text);box-shadow:0 30px 60px -30px rgba(0,0,0,.25);}
   .log-row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 24px;border-bottom:1px solid var(--panel-line);}
   .log-row:last-child{border-bottom:none;}
   .log-date{color:var(--panel-muted);}
@@ -255,6 +261,7 @@
           <span>Est. image: <b id="imgSize">—</b></span>
         </div>
       </div>
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
     </div>
   </div>
 </header>
@@ -293,6 +300,7 @@
         <p>Languages and tools ready before you've opened a terminal.</p>
         <div class="chip-row"><span class="chip">git</span><span class="chip">python3</span><span class="chip">nodejs</span></div>
       </div>
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
     </div>
   </div>
 </section>
@@ -321,6 +329,7 @@
       <div class="log-row"><div class="log-date">2026-08-24</div><div class="log-msg">Security-tool repository pinning integrated for the pentest profile.</div></div>
       <div class="log-row"><div class="log-date">2026-08-23</div><div class="log-msg">Repository, website, and IRC channel went live.</div></div>
       <div class="log-row"><div class="log-date">next</div><div class="log-msg">Installer wired up to the profile selector shown above.</div></div>
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
     </div>
   </div>
 </section>

@@ -184,6 +184,13 @@
   .ff-note b{color:var(--panel-text);}
   @media (max-width:600px){.chat-pane iframe{height:420px;}}
 
+  .roadmap-grid{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--panel-line);border:1px solid rgba(224,16,43,.45);box-shadow:0 40px 80px -30px rgba(0,0,0,.4),0 0 70px -8px rgba(224,16,43,.25);}
+  @media (max-width:700px){.roadmap-grid{grid-template-columns:1fr;}}
+  .rm-item{background:var(--panel);color:var(--panel-text);padding:28px 26px;display:flex;gap:16px;align-items:flex-start;}
+  .rm-box{width:14px;height:14px;flex:0 0 14px;margin-top:4px;border:1px solid var(--panel-muted);}
+  .rm-text .name{font-family:var(--disp);font-weight:700;font-size:1rem;margin-bottom:6px;color:var(--panel-text);}
+  .rm-text .desc{font-size:.85rem;color:var(--panel-muted);}
+
   .philosophy{max-width:760px;}
   .philosophy p{font-family:var(--disp);font-weight:500;font-style:italic;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.5;color:var(--ink);}
   .philosophy .annot{font-family:var(--mono);font-size:.78rem;color:var(--signal);margin-top:26px;letter-spacing:.03em;}
@@ -230,6 +237,7 @@
       <a href="#profiles">Profiles</a>
       <a href="#philosophy">About</a>
       <a href="#log">Log</a>
+      <a href="#roadmap">Roadmap</a>
       <a href="#chat">Chat</a>
       <a href="https://github.com/medula-linux/medula-linux" class="nav-gh">GitHub</a>
     </div>
@@ -349,11 +357,32 @@
   </div>
 </section>
 
+<section id="roadmap">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <div>
+        <span class="sec-eyebrow">04 / Roadmap</span>
+        <h2 class="sec-title">Queued.<br>Not shipped.</h2>
+      </div>
+      <p class="sec-note">Unchecked on purpose — none of this exists yet. It's the order we're thinking about it in.</p>
+    </div>
+    <div class="roadmap-grid">
+      <div class="rm-item"><span class="rm-box"></span><div class="rm-text"><div class="name">Kiosk mode</div><div class="desc">A no-GUI terminal dashboard for the Server profile at login.</div></div></div>
+      <div class="rm-item"><span class="rm-box"></span><div class="rm-text"><div class="name">medula-doctor</div><div class="desc">One command for disk space, pending updates, and failed services.</div></div></div>
+      <div class="rm-item"><span class="rm-box"></span><div class="rm-text"><div class="name">Privacy profile</div><div class="desc">Tor, a preconfigured VPN, and a hardened browser as a fifth profile.</div></div></div>
+      <div class="rm-item"><span class="rm-box"></span><div class="rm-text"><div class="name">Snapshots</div><div class="desc">Btrfs and Timeshift wired in, so a bad update is one rollback away.</div></div></div>
+      <div class="rm-item"><span class="rm-box"></span><div class="rm-text"><div class="name">Hardware-aware installer</div><div class="desc">Detects the machine and suggests a profile — dedicated GPU, desktop suggested.</div></div></div>
+      <div class="rm-item"><span class="rm-box"></span><div class="rm-text"><div class="name">Medula Store</div><div class="desc">A curated package repository of its own. Further down the road.</div></div></div>
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+    </div>
+  </div>
+</section>
+
 <section id="chat">
   <div class="wrap reveal">
     <div class="sec-head">
       <div>
-        <span class="sec-eyebrow">04 / Chat</span>
+        <span class="sec-eyebrow">05 / Chat</span>
         <h2 class="sec-title">Talk to us<br>live.</h2>
       </div>
       <p class="sec-note">Both channels are #medula. Libera connects right here — UnderNet opens in its own tab.</p>
